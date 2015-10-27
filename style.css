@@ -1,6 +1,6 @@
 /* Palette URL: http://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF */
 
-.color-grey-1 { color: #F0F0F0 }
+.color-grey-1 { color: #E0E0E0 }
 .color-grey-2 { color: #D0D0D0 }
 .color-grey-0 { color: #CCCCCC }
 .color-grey-3 { color: #808080 }
@@ -64,11 +64,13 @@ body {
   font-family: monospace;
   background-color: #AA3939;
   color: #FFAAAA;
+  font-size: 10pt;
 }
 
 a:link, a:visited {
-  color: #F0F0F0;
+  color: #E0E0E0;
   text-decoration: none;
+  text-shadow: 1px 1px 0 #550000;
 }
 
 a:hover, a:focus, a:active {
@@ -85,7 +87,7 @@ p {
 
 pre {
   background-color: #101010;
-  color: #F0F0F0;
+  color: #E0E0E0;
   padding: 10pt;
   margin: 10pt 0;
 }
@@ -171,27 +173,35 @@ main {
 .post-data h1 {
   font-size: 44pt;
   text-shadow: 3px 3px 0 #550000;
+  margin-bottom: 24pt;
+  color: #FFD1AA;
 }
 
 .post-data time {
   display: block;
   margin: 12pt 0;
-  padding: 4pt 0;
+  padding: 2pt 0;
   border: solid #D46A6A;
   border-width: 3px 0;
+  text-align: center;
 }
 
 .tags {
   float: left;
   width: 100%;
-  clear: both;
   background-color: #D46A6A;
+  margin-bottom: 12pt;
+}
+
+.post-nav {
+  float: left;
+  width: 100%;
+  clear: both;
 }
 
 .tags a {
   display: block;
-  padding: 4pt 3pt;
-  text-shadow: 1px 1px 0px #550000;
+  padding: 2pt 3pt;
 }
 
 .tags:before {
@@ -202,6 +212,23 @@ main {
   content: 'TAGS';
   color: #AA3939;
   font-family: 'CaveStoryRegular', monospace;
-  font-size: 15pt;
+  font-size: 12pt;
   border-right: 1px solid #AA3939;
+}
+
+.post-link {
+  display: block;
+  margin: 12pt 0;
+  font-family: 'CaveStoryRegular', monospace;
+  font-size: 24pt;
+}
+
+.post-link:before {
+  display:block;
+  content: attr(rel);
+  color: #669999;
+}
+
+.post-link:hover:before {
+  color: #88CC88;
 }
