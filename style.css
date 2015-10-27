@@ -89,16 +89,17 @@ pre {
   background-color: #101010;
   color: #E0E0E0;
   padding: 10pt;
-  margin: 10pt 0;
+  margin: 10pt 0 20pt 0;
+  box-shadow: 10pt 10pt 0 0 #550000;
 }
 
 header {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   border-bottom: 20px solid #303030;
-  background-color: #AA3939;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #AA3939 30%);
 }
 
 h1, h2, h3, h4, h5 {
@@ -115,6 +116,7 @@ main {
   float: left;
   width: 60%;
   padding: 20pt;
+  margin-left: 30%;
 }
 
 .site-title {
@@ -165,16 +167,21 @@ main {
 }
 
 .post-data {
-  float: left;
+  position: fixed;
   width: 30%;
   padding: 20pt;
 }
 
-.post-data h1 {
+.post-title {
   font-size: 44pt;
   text-shadow: 3px 3px 0 #550000;
   margin-bottom: 24pt;
   color: #FFD1AA;
+}
+
+.post-title a {
+  color: inherit;
+  text-shadow: inherit;
 }
 
 .post-data time {
