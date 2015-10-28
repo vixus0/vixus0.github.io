@@ -104,7 +104,7 @@
                                         bottom: 0;
                                         right: 0;
                                         left: 30%;
-                                        background: linear-gradient(to bottom, transparent 0%, #AA6060 40%); }
+                                        background: url('grad.png') repeat-x; }
 
                                         .site-nav ul {
                                           padding: 16pt 6pt;
