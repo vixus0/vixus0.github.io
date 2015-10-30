@@ -16,6 +16,7 @@
         <ul class="float-list">
                     <li><a href="archive.html">Archive</a></li>
                     <li><a href="tags.html">Tags</a></li>
+                    <li><a href="code.html">Code</a></li>
                     <li><a href="who.html">Who?</a></li>
                   </ul>
       </nav>
@@ -44,14 +45,15 @@
 </pre></div>
 
 
-<p>Posts and pages contain your content, blog and persistent respectively. Static is where you put any other stuff. As a bonus, SCSS files will be compiled to CSS. Templates contains the HTML skeleton.</p>
+<p>Posts and pages contain your content. Static is where you put any other stuff. CSS and SCSS files in this directory will be compiled and merged. Templates contains the HTML skeleton in Jinja format.</p>
 <p>Posts or pages can be .md or .whatever. Everything is spewed into a directory, accidentally creating an archive and tags page on the way. It's all static HTML. All the way down.</p>
 <p>Usage? Sure:</p>
-<div class="codehilite"><pre>blarg output_dir
+<div class="codehilite"><pre>blarg <span class="o">[</span>--out OUT<span class="o">]</span> <span class="o">[</span>--editor EDITOR<span class="o">]</span> <span class="o">{</span>new, render, push<span class="o">}</span>
 </pre></div>
 
 
-<p>Arguments? What arguments?? What could you <em>possibly need</em> to configure?!</p>
+<p>OUT is where the compiled files will end up. EDITOR is the editor to launch for new posts.</p>
+<p>Actions: new - write a new post, render - compile everything, push - commit and push the output directory (I'm assuming it will be a repo.)</p>
             </main>
     </article>
   </body>
