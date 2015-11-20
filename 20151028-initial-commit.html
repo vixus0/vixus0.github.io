@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>/proc/meat/initial commit</title>
+    <title>vixus' blog: Initial Commit</title>
     <link rel="stylesheet" href="static/style.css">
     <link rel="icon" type="image/png" href="/static/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96">
@@ -11,42 +11,37 @@
   </head>
   <body>
     <header>
-      <h1 class="site-title"><a href="index.html" title="Home">/proc/meat</a></h1>
+      <h1 class="site-title">vixus' blog</h1>
             <nav class="site-nav">
         <ul class="float-list">
+          <li><a href="index.html" title="Latest post">Latest</a></li>
                     <li><a href="archive.html">Archive</a></li>
                     <li><a href="tags.html">Tags</a></li>
-                    <li><a href="code.html">Code</a></li>
                     <li><a href="who.html">Who?</a></li>
                   </ul>
       </nav>
           </header>
     <article>
       <section class="post-data">
-        <h1 class="post-title"><a href="#" title="Permalink">initial commit</a></h1>
-                <dl class="def-list">
-          <dt>Posted On</dt><dd><time>28 Oct 2015 @ 13:00</time></dd>
-                    <dt>Tags</dt>
-          <dd>
-                        <a href="tags.html#blog">blog</a>
-                        <a href="tags.html#python">python</a>
-                      </dd>
-                  </dl>
-        <nav class="post-nav">
+                <div class="post-data-item" rel="post-date">28 Oct 2015 @ 13:00</div>
+                <div class="post-data-item" rel="post-tags">
+                    <a href="tags.html#python">python</a>
+                  </div>
+                <nav class="post-nav">
                             </nav>
               </section>
       <main>
-            <p>Well every programmer and their gran has a blog now so I guess it is about high time I got on the bandwagon. I'm sure people will want to know exactly what I think about the latest sweet JS LIBZ.</p>
-<p>The design is possibly horrifying, considering the distinct lack of a silky smooth sans-serif carefully designed by typographic artisans hand tweaking every bezier to follow the golden ratio in order to fill designers with a calm sense of well-being. Honestly, I am a bad person for just not using system fonts. But this was My Vision™ and I kind of like it.</p>
-<p>I looked into using other static site generators before rolling my own, as every good dev does. They're all great, really great. But you know sometimes you get that odd feeling when you're in an entirely strange place where you don't speak the language and you're not quite sure how anything works? Not like you're in danger or anything, just that you want to have a little bit of familiarity so you go and buy pizza or a beer or something because pizza and beer tends to be similar in most places. Anyway that's why I wrote <a href="https://github.com/vixus0/blarg" title="blarg on github">my own</a>. Not that I really want anyone to use it. It took a day of just hammering keys, wanting to get it <em>done</em>. It is <em>not</em> beautiful code.</p>
+      <h1 class="post-title"><a href="#" title="Permalink">Initial Commit</a></h1>
+            <p>Well every programmer and their gran has a blog now so I guess it is about high time I got on the bandwagon. I'm sure people will want to know exactly what I think about the latest developments in getting assembly in your JavaScript in your thing.</p>
+<p>I looked into using other static site generators before rolling my own, as every good dev does. They're all great, really great. But you know sometimes you get that odd feeling when you're in an entirely strange place where you don't speak the language and you're not quite sure how anything works? Not like you're in danger or anything, just that you want to have a little bit of familiarity so you go and buy pizza or a beer or something because pizza and beer tends to be similar in most places. Anyway so I wrote <a href="https://github.com/vixus0/blarg" title="blarg on github">my own thing</a>. It is <em>not</em> beautiful code but it does the trick (hey, that's Python!)</p>
 <h2>README</h2>
-<p>In the interests of filling space, and to remind myself in case I ever get amnesia I'm going to explain how it works. Put blarg next to 4 folders:</p>
+<p>In the interests of filling space, and in case I ever get amnesia I'm going to explain how it works. Put blarg next to 4 folders:</p>
 <div class="codehilite"><pre>posts/ pages/ static/ templates/
 </pre></div>
 
 
-<p>Posts and pages contain your content. Static is where you put any other stuff. CSS and SCSS files in this directory will be compiled and merged. Templates contains the HTML skeleton in Jinja format.</p>
-<p>Posts or pages can be .md or .whatever. Everything is spewed into a directory, accidentally creating an archive and tags page on the way. It's all static HTML. All the way down.</p>
+<p>Posts and pages contain your content. Static is where you put any other stuff. CSS and SCSS files in this directory will be compiled and merged. Templates are in Jinja format.</p>
+<p>Posts or pages can be .md if you like Markdown. Everything is spewed into a directory, accidentally creating an archive and tags page on the way. It's all boring, static HTML. All the way down.</p>
 <p>Usage? Sure:</p>
 <div class="codehilite"><pre>blarg <span class="o">[</span>--out OUT<span class="o">]</span> <span class="o">[</span>--editor EDITOR<span class="o">]</span> <span class="o">{</span>new, render, push<span class="o">}</span>
 </pre></div>
