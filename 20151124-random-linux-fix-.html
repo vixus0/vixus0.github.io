@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>vixus' blog: Random Linux Fix #1</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="icon" type="image/png" href="/static/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/static/favicon-16x16.png" sizes="16x16">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+  </head>
+  <body>
+    <header>
+      <h1 class="site-title">vixus' blog</h1>
+            <nav class="site-nav">
+        <ul class="float-list">
+          <li><a href="index.html" title="Latest post">Latest</a></li>
+                    <li><a href="archive.html">Archive</a></li>
+                    <li><a href="tags.html">Tags</a></li>
+                    <li><a href="who.html">Who?</a></li>
+                  </ul>
+      </nav>
+          </header>
+    <article>
+      <section class="post-data">
+                <div class="post-data-item" rel="post-date">24 Nov 2015 @ 13:15</div>
+                <div class="post-data-item" rel="post-tags">
+                    <a href="tags.html#linux">linux</a>
+                    <a href="tags.html#arch">arch</a>
+                    <a href="tags.html#kms">kms</a>
+                    <a href="tags.html#intel">intel</a>
+                    <a href="tags.html#xorg">xorg</a>
+                  </div>
+                <nav class="post-nav">
+                    <a class="post-link" rel="Previous" title="Previous post" href="20151028-initial-commit.html">Initial Commit</a>
+                            </nav>
+              </section>
+      <main>
+      <h1 class="post-title"><a href="#" title="Permalink">Random Linux Fix #1</a></h1>
+            <p>Some flavour of Linux has been my operating system of choice for well over a decade now. I run it on my aging Thinkpad X60 and a homemade desktop. I haven't had Windows running on a personal machine since my <a href="http://www.teamfortress.com">favourite game</a> was ported to Linux. For the last 5 years the distribution I've grown attached to is <a href="https://archlinux.org">Arch</a>. It's clean, simple(ish) to work with and doesn't hold your hand. Without a doubt I've learned a lot more about how Linux works than if I'd stuck with something like Ubuntu. In fact I've probably learned more than I want to.</p>
+<p>Arch is "bleeding-edge", meaning frequent updates which should mean stuff breaks more often. Actually I haven't really had stuff go wrong much more than on Ubuntu/Debian and the payoff is more up-to-date software. Every so often though, I'll run into some horrendous problem that offers no clues as to what went wrong. When this happens it's time to head on over to Google and start angrily mashing keys.</p>
+<p>Last night, I rebooted my laptop (I rarely ever shut it down, since suspend/resume works perfectly ...for now) and found that X just wouldn't get going. After the boot messages, all I'd see onscreen was this:</p>
+<div class="codehilite"><pre>_
+</pre></div>
+
+
+<p>The cursor wasn't blinking and I couldn't switch ttys with Ctrl+F#. Hitting the power button wouldn't shut down normally. This had happened a couple of times previously and I blamed LightDM for it. It was a rare occurrence and never reproducible. I had added the <code>logind-check-graphical=true</code> line to <code>lightdm.conf</code> and all seemed well. Until last night. I kept power-cycling the poor thing and nothing worked. I continued staring into the inky blackness of Linux's soul. After stress-Googling for half an hour or so I gave up and went to bed. But I did find Florian Berger's <a href="http://florian-berger.de/en/articles/i915-black-screen-on-boot-issue/">post</a> on this very issue.</p>
+<p>Bullet point #5 caught my eye because I had seen it mentioned elsewhere. It's also mentioned on the Arch Wiki <a href="https://wiki.archlinux.org/index.php/Intel_graphics#KMS_Issue:_console_is_limited_to_small_area" title="Arch Wiki: Intel graphics">here</a> though not as a fix to my problem. Basically, add the following kernel parameter to your boot options:</p>
+<div class="codehilite"><pre>video=SVIDEO-1:d
+</pre></div>
+
+
+<p>Here, SVIDEO-1 refers to some display out port. I don't even think my laptop has one of those. It only has a VGA out. Either way, this flag disables it I guess. I found an interesting <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=697741" title="Debian bug #697741">bug report</a> that involves the same graphics chip and fix. Worryingly the bug was reported fixed in kernel 3.8 and I'm now running 4.2. So clearly not fixed. Maybe I have to file my own bug report...</p>
+<p>So though I don't really know what the problem was, it works... for now.</p>
+            </main>
+    </article>
+  </body>
+</html>
