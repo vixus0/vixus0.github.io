@@ -1,0 +1,64 @@
+<title>note</title>
+<style>
+body {
+  background: black;
+  padding: 2vw;
+}
+nav {
+  border-bottom: 1px solid white;
+  text-align: right;
+}
+nav a {
+  display:inline-block;
+  color: white;
+  padding: 0.5vw;
+  font-size: 14pt;
+  text-decoration: none;
+}
+pre#editor {
+  color: white;
+  font-size: 32pt;
+  white-space: pre-line;
+  padding: 2vw;
+  margin: 0;
+}
+</style>
+<body>
+<nav>
+<a id=newlink href="" title="bookmark for new note">new</a>
+<a id=permalink href="" title="bookmark to save"></a>
+</nav>
+<pre id=editor contenteditable>
+note
+</pre>
+</body>
+<script>
+  const editor = document.querySelector('#editor');
+  const permalink = document.querySelector('#permalink');
+  const newlink = document.querySelector('#newlink');
+  init();
+  function init() {
+    const tmpEditor = editor.innerText;
+    const tmpTitle = permalink.innerText;
+    editor.innerText = "note\n";
+    permalink.innerText = "";
+    permalink.href = "";
+    newlink.href = generateDataURL();
+    editor.innerText = tmpEditor;
+    permalink.innerText = tmpTitle;
+    editor.addEventListener('blur', save);
+  }
+  function save() {
+    if (editor.innerText.trim().length === 0) return;
+    const date = new Date();
+    const firstline = editor.innerText.split("\n")[0];
+    const title = `${firstline} - ${date.toISOString()}`;
+    document.title = title;
+    permalink.innerText = title;
+    permalink.href = "";
+    permalink.href = generateDataURL();
+  }
+  function generateDataURL() {
+    return `data:text/html;base64,${btoa(document.documentElement.outerHTML)}`;
+  }
+</script>
